@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function List() {
     let [todo, setTodo] = useState('test');
@@ -17,6 +17,10 @@ function List() {
         let list = [...todoList]
         list.splice(idx, 1);
         setTodoList(list);
+
+        let cssStatus = [...css];
+        cssStatus.splice(idx, 1);
+        setCss(cssStatus);
     }
 
     function checkTodo(idx) {
@@ -25,6 +29,7 @@ function List() {
         setCss(cssStatus);
         
     }
+
     return (
         <>
             <div className="list-area">
